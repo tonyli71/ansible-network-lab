@@ -10,9 +10,9 @@ Vagrant.require_version ">= 2.1.1"
 
 $script = <<SCRIPT
 git clone https://github.com/wangzheng422/ansible-network-lab
-chown -R vagrant:vagrant workshops
-cp /home/vagrant/workshops/vagrant-demo/ansible.cfg /home/vagrant/.ansible.cfg
-cp /home/vagrant/workshops/vagrant-demo/etchosts /etc/hosts
+chown -R vagrant:vagrant ansible-network-lab
+cp /home/vagrant/ansible-network-lab/vagrant-demo/ansible.cfg /home/vagrant/.ansible.cfg
+cp /home/vagrant/ansible-network-lab/vagrant-demo/etchosts /etc/hosts
 yum install epel-release -y
 yum install python-pip tree ansible -y
 pip install --upgrade pip
@@ -28,7 +28,7 @@ Vagrant.configure("2") do |config|
 
 # FOR Arista vEOS
   network_os = "veos"
-  network_memory = 2048
+  network_memory = 4096
 
 #FOR CUMULUS VX
   # network_os = "CumulusCommunity/cumulus-vx"
