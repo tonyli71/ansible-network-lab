@@ -56,6 +56,7 @@ Vagrant.configure("2") do |config|
       v.name = "#{simid}_leaf01"
       v.customize ["modifyvm", :id, '--audiocontroller', 'AC97', '--audio', 'Null']
       v.memory = network_memory
+      v.cpus = 4
     end
 
     device.vm.provision "leaf01_shell_config", type: 'shell', inline: <<-SHELL
@@ -98,6 +99,7 @@ Vagrant.configure("2") do |config|
       v.name = "#{simid}_leaf02"
       v.customize ["modifyvm", :id, '--audiocontroller', 'AC97', '--audio', 'Null']
       v.memory = network_memory
+      v.cpus = 4
     end
     #   see note here: https://github.com/pradels/vagrant-libvirt#synced-folders
     device.vm.provision "leaf02_shell_config", type: 'shell', inline: <<-SHELL
@@ -141,6 +143,7 @@ Vagrant.configure("2") do |config|
       v.name = "#{simid}_spine01"
       v.customize ["modifyvm", :id, '--audiocontroller', 'AC97', '--audio', 'Null']
       v.memory = network_memory
+      v.cpus = 4
     end
     #   see note here: https://github.com/pradels/vagrant-libvirt#synced-folders
     device.vm.provision "spine01_shell_config", type: 'shell', inline: <<-SHELL
@@ -182,6 +185,7 @@ Vagrant.configure("2") do |config|
       v.name = "#{simid}_spine02"
       v.customize ["modifyvm", :id, '--audiocontroller', 'AC97', '--audio', 'Null']
       v.memory = network_memory
+      v.cpus = 4
     end
     #   see note here: https://github.com/pradels/vagrant-libvirt#synced-folders
     device.vm.provision "spine02_shell_config", type: 'shell', inline: <<-SHELL
