@@ -48,6 +48,9 @@ Vagrant.configure("2") do |config|
     device.vm.provision "shell", inline: $script
   end
 
+  config.ssh.username = "root"
+  config.ssh.password = "vagrant"
+
   ##### DEFINE VM for leaf01 #####
   config.vm.define "leaf01" do |device|
     device.vm.boot_timeout = 3000
