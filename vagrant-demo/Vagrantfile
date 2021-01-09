@@ -48,11 +48,10 @@ Vagrant.configure("2") do |config|
     device.vm.provision "shell", inline: $script
   end
 
-  config.ssh.username = "root"
-  config.ssh.password = "vagrant"
-
   ##### DEFINE VM for leaf01 #####
   config.vm.define "leaf01" do |device|
+    config.ssh.username = "root"
+    config.ssh.password = "vagrant"
     device.vm.boot_timeout = 3000
     device.vm.hostname = "leaf01"
     device.vm.box = "#{network_os}"
@@ -94,8 +93,12 @@ Vagrant.configure("2") do |config|
       vbox.customize ['modifyvm', :id, '--nicpromisc8', 'allow-all']
     end
   end
+
+
   ##### DEFINE VM for leaf02 #####
   config.vm.define "leaf02" do |device|
+    config.ssh.username = "root"
+    config.ssh.password = "vagrant"
     device.vm.boot_timeout = 3000
     device.vm.hostname = "leaf02"
     device.vm.box = "#{network_os}"
@@ -138,8 +141,11 @@ Vagrant.configure("2") do |config|
     end
   end
 
+
   ##### DEFINE VM for spine01 #####
   config.vm.define "spine01" do |device|
+    config.ssh.username = "root"
+    config.ssh.password = "vagrant"
     device.vm.boot_timeout = 3000
     device.vm.hostname = "spine01"
     device.vm.box = "#{network_os}"
@@ -180,8 +186,11 @@ Vagrant.configure("2") do |config|
     end
   end
 
-##### DEFINE VM for spine02 #####
+
+  ##### DEFINE VM for spine02 #####
   config.vm.define "spine02" do |device|
+    config.ssh.username = "root"
+    config.ssh.password = "vagrant"
     device.vm.boot_timeout = 3000
     device.vm.hostname = "spine02"
     device.vm.box = "#{network_os}"
