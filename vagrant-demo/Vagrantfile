@@ -49,6 +49,7 @@ Vagrant.configure("2") do |config|
 
   ##### DEFINE VM for leaf01 #####
   config.vm.define "leaf01" do |device|
+    device.vm.boot_timeout = 3000
     device.vm.hostname = "leaf01"
     device.vm.box = "#{network_os}"
     device.vm.network "forwarded_port", guest: 22, host: 6001
@@ -91,7 +92,7 @@ Vagrant.configure("2") do |config|
   end
   ##### DEFINE VM for leaf02 #####
   config.vm.define "leaf02" do |device|
-
+    device.vm.boot_timeout = 3000
     device.vm.hostname = "leaf02"
     device.vm.box = "#{network_os}"
     device.vm.network "forwarded_port", guest: 22, host: 6002
@@ -135,7 +136,7 @@ Vagrant.configure("2") do |config|
 
   ##### DEFINE VM for spine01 #####
   config.vm.define "spine01" do |device|
-
+    device.vm.boot_timeout = 3000
     device.vm.hostname = "spine01"
     device.vm.box = "#{network_os}"
     device.vm.network "forwarded_port", guest: 22, host: 6003
@@ -177,7 +178,7 @@ Vagrant.configure("2") do |config|
 
 ##### DEFINE VM for spine02 #####
   config.vm.define "spine02" do |device|
-
+    device.vm.boot_timeout = 3000
     device.vm.hostname = "spine02"
     device.vm.box = "#{network_os}"
     device.vm.network "forwarded_port", guest: 22, host: 6004
