@@ -29,6 +29,7 @@ Vagrant.configure("2") do |config|
 # FOR Arista vEOS
   network_os = "veos"
   network_memory = 4096
+  network_cpu = 2
 
 #FOR CUMULUS VX
   # network_os = "CumulusCommunity/cumulus-vx"
@@ -57,7 +58,7 @@ Vagrant.configure("2") do |config|
       v.name = "#{simid}_leaf01"
       v.customize ["modifyvm", :id, '--audiocontroller', 'AC97', '--audio', 'Null']
       v.memory = network_memory
-      v.cpus = 4
+      v.cpus = network_cpu
     end
 
     device.vm.provision "leaf01_shell_config", type: 'shell', inline: <<-SHELL
@@ -100,7 +101,7 @@ Vagrant.configure("2") do |config|
       v.name = "#{simid}_leaf02"
       v.customize ["modifyvm", :id, '--audiocontroller', 'AC97', '--audio', 'Null']
       v.memory = network_memory
-      v.cpus = 4
+      v.cpus = network_cpu
     end
     #   see note here: https://github.com/pradels/vagrant-libvirt#synced-folders
     device.vm.provision "leaf02_shell_config", type: 'shell', inline: <<-SHELL
@@ -144,7 +145,7 @@ Vagrant.configure("2") do |config|
       v.name = "#{simid}_spine01"
       v.customize ["modifyvm", :id, '--audiocontroller', 'AC97', '--audio', 'Null']
       v.memory = network_memory
-      v.cpus = 4
+      v.cpus = network_cpu
     end
     #   see note here: https://github.com/pradels/vagrant-libvirt#synced-folders
     device.vm.provision "spine01_shell_config", type: 'shell', inline: <<-SHELL
@@ -186,7 +187,7 @@ Vagrant.configure("2") do |config|
       v.name = "#{simid}_spine02"
       v.customize ["modifyvm", :id, '--audiocontroller', 'AC97', '--audio', 'Null']
       v.memory = network_memory
-      v.cpus = 4
+      v.cpus = network_cpu
     end
     #   see note here: https://github.com/pradels/vagrant-libvirt#synced-folders
     device.vm.provision "spine02_shell_config", type: 'shell', inline: <<-SHELL
