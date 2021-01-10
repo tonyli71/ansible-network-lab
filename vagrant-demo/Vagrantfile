@@ -49,6 +49,7 @@ Vagrant.configure("2") do |config|
   end
 
   config.ssh.username = 'root'
+  config.ssh.insert_key = false
 
   ##### DEFINE VM for leaf01 #####
   config.vm.define "leaf01" do |device|
