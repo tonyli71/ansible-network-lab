@@ -5,8 +5,8 @@
 Navigate to the `networking-workshop` directory.
 
 ```
-[vagrant@ansible ~]$ cd linklight/
-[vagrant@ansible linklight]$
+[vagrant@ansible ~]$ cd /home/vagrant/ansible-network-lab/vagrant-demo
+[vagrant@ansible vagrant-demo]$
 
 ```
 
@@ -16,12 +16,12 @@ Run the `ansible` command with the `--version` command to look at what is config
 
 ```
 [vagrant@ansible linklight]$ ansible --version
-ansible 2.7.0.dev0
-  config file = /home/vagrant/.ansible.cfg
+ansible 2.9.16
+  config file = /home/vagrant/ansible-network-lab/vagrant-demo/ansible.cfg
   configured module search path = [u'/home/vagrant/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
   ansible python module location = /usr/lib/python2.7/site-packages/ansible
   executable location = /usr/bin/ansible
-  python version = 2.7.5 (default, Aug  4 2017, 00:39:18) [GCC 4.8.5 20150623 (Red Hat 4.8.5-16)]
+  python version = 2.7.5 (default, Oct 14 2020, 14:45:30) [GCC 4.8.5 20150623 (Red Hat 4.8.5-44)]
 ```
 
 > Note: The ansible version you see might differ from the above output
